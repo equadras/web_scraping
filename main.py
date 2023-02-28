@@ -38,4 +38,4 @@ for i in range(1, ultima_pagina+1):
 
 
 df = pd.DataFrame(dic_produtos)
-df.to_csv('C:/Users/Ema/Downloads/notebooks.csv', encoding='utf-8', sep=';')
+df.to_csv('EndereçoDeOndeDesejaColocarNoComputador/notebooks.csv', encoding='utf-8', sep=';')
