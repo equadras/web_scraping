@@ -4,9 +4,9 @@ import re
 import pandas as pd
 import math
 
-url = 'shttps://www.kabum.com.br/computadores/notebooks?page_number=1&page_size=20&facet_filters=eyJwcmljZSI6eyJtaW4iOjEwNjMuMTgsIm1heCI6NTc5MDB9fQ==&sort=most_searched'
+url = 'https://www.kabum.com.br/computadores/notebooks?page_number=1&page_size=20&facet_filters=eyJwcmljZSI6eyJtaW4iOjcxMC4xNSwibWF4Ijo1NzkwMH19&sort=most_searched'
 headers = {'User-Agent': "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 \
-    (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36 OPR/95.0.0.0"}
+           (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36 OPR/95.0.0.0"}
 
 site = requests.get(url, headers=headers)
 soup = BeautifulSoup(site.content, 'html.parser')
@@ -34,7 +34,7 @@ for i in range(1, ultima_pagina+1):
         dic_produtos['marca'].append(marca)
         dic_produtos['preco'].append(preco)
 
-    print(url_pag)
+    print(f"saindo da pag {i}")
 
 
 df = pd.DataFrame(dic_produtos)
